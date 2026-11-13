@@ -21,7 +21,7 @@ Give the numbers before -> after for that layer (correct / wrong / no answer, ou
 whether it changed what the agent *can do* or only what it *admits*. If no layer changed the
 number of correct answers, say so and explain what the layers did change instead.
 
-(write here)
+Layer 1 changed my results the most. Before it, the bare agent had 16 correct, 4 wrong and 4 no answer out of 24. After layer 1 it had 18 correct, 6 wrong and 0 no answer. So correct went up by two, but wrong also went up by two, and no answer went to zero. This tells me layer 1 did not make the model smarter. It changed what the program does after a tool error. Before, the whole run stopped and gave nothing. After, the model saw the error and could try again. Two alias questions (q23, q24) became correct this way, but q21 and q22 now gave a wrong answer instead of nothing. Layer 2 changed no numbers at all: 18 correct, 6 wrong, 0 no answer, and the same 48708 tokens as layer 1.
 
 ## 2. One failure the full harness did not fix
 
