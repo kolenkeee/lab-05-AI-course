@@ -30,7 +30,7 @@ Pick one question that the full harness (layer 3) still gets wrong or refuses. G
 the model do instead? Name one thing you would add to the harness, and what it would cost
 (extra model calls, tokens, time, or a new way to fail).
 
-(write here)
+I pick q08: "which region had the lowest average monthly wage in 2024". Layer 3 still answers Jambyl, and Jambyl is wrong. In the trace the model called compare_regions with indicator avg_monthly_wage and year 2024. The tool returned the list sorted highest first, with Astana on top. The model then wrote "ANSWER: Jambyl". It read the list wrong: the lowest region is the last one, not Jambyl. The harness did not catch it because grounding only checks numbers. A region name is not a number, and "Jambyl" really is inside the tool output, so it looks grounded. One thing I would add: a small check that, for a rank question, compares the answer with the first or last row of the tool list. It would cost almost no tokens, only a few lines of code, and no extra model calls. A new way to fail: if the check is too strict, it may reject a correct answer written with a different spelling.
 
 ## 3. Workflow or agent for the monthly ranking?
 
