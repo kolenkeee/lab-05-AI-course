@@ -39,7 +39,7 @@ indicator in one year". Would you ship the fixed workflow or the agent? Use the 
 number of model calls, the tokens and the time you measured in Part 1. Then say in one sentence
 what kind of question would make you choose the other one.
 
-(write here)
+For a monthly ranking I would ship the workflow. On the 15 fixed questions it got 13 correct out of 15, with 15 model calls, 3852 tokens and 15.9 seconds. The bare agent on the same 15 questions got 9 correct, with 26 calls, 19835 tokens and 50.9 seconds. So the workflow was more correct, used fewer calls, fewer tokens and less time. The ranking question has a known shape, so a fixed pipeline is enough. I would choose the agent only if the question can change shape, for example a growth or percentage-point question where the model must decide which tools to call and in what order.
 
 ---
 
